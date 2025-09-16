@@ -5,9 +5,27 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>BlockRadar — Domain Engeli Takip & Anlık Alarm</title>
 <link rel="canonical" href="https://blockradar.app/"/>
+
+<!-- SEO -->
 <meta name="description" content="BlockRadar: Domain engellerini çoklu lokasyonda izler, anında alarm verir. Telegram entegrasyonlu, kurumsal dayanıklılık.">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#0B1D39">
+
+<!-- Favicon & App Icons (STYLE DIŞINDA OLMALI) -->
+<link rel="icon" href="/favicon.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- Open Graph -->
+<meta property="og:title" content="BlockRadar — Domain Engeli Takip & Anlık Alarm">
+<meta property="og:description" content="Domain engellerini çoklu lokasyonda izler, anında alarm verir.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://blockradar.app/">
+<meta property="og:image" content="https://blockradar.app/og.jpg">
+
 <style>
 /* ---------- THEME ---------- */
 :root{
@@ -15,29 +33,30 @@
   --line:#2a4266; --accent:#54a6ff; --accent2:#9b7bff; --alert:#ff3d5a;
   --glass:#10233f88; --glass-solid:#122742;
 }
-*{box-sizing:border-box} html,body{height:100%;margin:0}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
 body{
-  font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  color:var(--ink); background:#000;
-  overflow-x:hidden;
+  font:16px/1.65 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--ink); background:#000; overflow-x:hidden;
 }
+
 /* ---------- CINEMATIC BACKGROUND ---------- */
 .bg{
-  position:fixed; inset:0; z-index:-3; filter:saturate(110%);
+  position:fixed; inset:0; z-index:-3; filter:saturate(110%); pointer-events:none;
   background:
     radial-gradient(1200px 600px at 70% -10%, #1b3763 0%, transparent 60%),
     radial-gradient(900px 520px at -10% 30%, #133055 0%, transparent 55%),
     linear-gradient(135deg,var(--bg1),var(--bg2));
 }
 .flow{
-  position:fixed; inset:-20vh; z-index:-2; opacity:.8;
+  position:fixed; inset:-20vh; z-index:-2; opacity:.8; pointer-events:none;
   background: conic-gradient(from 0deg at 50% 50%, #0f2a4b, #0a1c36, #153a66, #0f2a4b);
   animation: spin 42s linear infinite;
   mask-image: radial-gradient(60% 60% at 50% 50%, #000 0%, transparent 75%);
 }
 @keyframes spin{to{transform:rotate(1turn)}}
 .grid{
-  position:fixed; inset:-10vh; z-index:-1; opacity:.20;
+  position:fixed; inset:-10vh; z-index:-1; opacity:.20; pointer-events:none;
   background-image:
     linear-gradient(to right, rgba(255,255,255,.08) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255,255,255,.08) 1px, transparent 1px);
@@ -63,7 +82,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
 .logo{width:42px;height:42px}
 .cta{
   position:relative; display:inline-flex; gap:12px; align-items:center; padding:14px 24px;
-  border-radius:14px; font-weight:800; letter-spacing:.2px;
+  border-radius:14px; font-weight:800; letter-spacing:.2px; line-height:1;
   background:linear-gradient(90deg,var(--accent),var(--accent2));
   box-shadow:0 10px 28px rgba(84,166,255,.3); isolation:isolate; overflow:hidden;
 }
@@ -76,13 +95,13 @@ header{display:flex;align-items:center;justify-content:space-between;padding:14p
 @keyframes shimmer{50%{transform:translateX(0)}100%{transform:translateX(100%)}}
 
 /* ---------- HERO ---------- */
-.hero{display:grid;grid-template-columns:1.08fr 1fr;gap:44px;align-items:center;padding:64px 0 40px}
-.title{font-size:54px;line-height:1.06;margin:0 0 14px;font-weight:900}
+.hero{display:grid;grid-template-columns:1.08fr 1fr;gap:48px;align-items:center;padding:68px 0 44px}
+.title{font-size:54px;line-height:1.08;margin:0 0 14px;font-weight:900}
 .subtitle{color:var(--muted);font-size:19px;margin:0 0 28px}
 
 /* status ribbon */
 .ribbon{display:inline-flex;gap:10px;align-items:center;background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.14); padding:8px 12px; border-radius:999px; font-size:13px}
+  border:1px solid rgba(255,255,255,.14); padding:8px 12px; border-radius:999px; font-size:13px; margin-bottom:12px}
 .dot{width:8px;height:8px;border-radius:999px;background:#69ff9b; box-shadow:0 0 18px #69ff9b; animation:pulse 1.8s ease-in-out infinite}
 @keyframes pulse{50%{transform:scale(1.2); box-shadow:0 0 26px #69ff9b}}
 
@@ -173,13 +192,9 @@ footer{padding:32px 0 40px;color:var(--muted);text-align:center;font-size:14px;b
   <!-- HEADER -->
   <header class="reveal">
     <div class="brand">
-      <!-- Minimal shield+radar logo -->
+      <!-- İstersen burayı kendi PNG logonla değiştir: <img src="/assets/logo.png" class="logo" alt="BlockRadar Logo"> -->
       <svg class="logo" viewBox="0 0 64 64" role="img" aria-label="BlockRadar">
-        <defs>
-          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#54a6ff"/><stop offset="1" stop-color="#9b7bff"/>
-          </linearGradient>
-        </defs>
+        <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#54a6ff"/><stop offset="1" stop-color="#9b7bff"/></linearGradient></defs>
         <rect width="64" height="64" rx="12" fill="#142C4E"/>
         <circle cx="32" cy="32" r="18" fill="none" stroke="#8FB2E3" stroke-width="2" opacity=".28"/>
         <circle cx="32" cy="32" r="10.5" fill="none" stroke="#8FB2E3" stroke-width="2" opacity=".28"/>
@@ -219,11 +234,7 @@ footer{padding:32px 0 40px;color:var(--muted);text-align:center;font-size:14px;b
       <!-- live wave -->
       <div class="wave">
         <svg viewBox="0 0 600 120" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#54a6ff"/><stop offset="1" stop-color="#9b7bff"/>
-            </linearGradient>
-          </defs>
+          <defs><linearGradient id="grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#54a6ff"/><stop offset="1" stop-color="#9b7bff"/></linearGradient></defs>
           <path class="path" d="M0,70 C60,40 120,90 180,60 S300,80 360,50 480,90 540,60 600,70 600,70" />
         </svg>
         <span class="badge">Uptime Telemetry</span>
@@ -261,22 +272,33 @@ footer{padding:32px 0 40px;color:var(--muted);text-align:center;font-size:14px;b
 
 <script>
 /* ---- counters on reveal ---- */
-function count(el, to, dur=1200){ const s=performance.now(); const f=()=>{ const t=performance.now()-s; const p=Math.min(t/dur,1); el.textContent = Math.floor(to*(0.2+0.8*p)); if(p<1) requestAnimationFrame(f)}; f();}
+function count(el, to, dur=1200){
+  const s=performance.now();
+  const f=()=>{ const t=performance.now()-s; const p=Math.min(t/dur,1);
+    el.textContent = Math.floor(to*(0.2+0.8*p)); if(p<1) requestAnimationFrame(f)};
+  f();
+}
 const targets=[{id:'c1',v:480},{id:'c2',v:3},{id:'c3',v:320}];
+
 /* ---- intersection reveal ---- */
 const io=new IntersectionObserver((ents)=>{
   ents.forEach(e=>{
-    if(e.isIntersecting){ e.target.classList.add('in');
+    if(e.isIntersecting){
+      e.target.classList.add('in');
       if(e.target.querySelector('#c1')) targets.forEach(t=>count(document.getElementById(t.id),t.v));
       io.unobserve(e.target);
     }
   });
 },{threshold:.25});
 document.querySelectorAll('.reveal').forEach(n=>io.observe(n));
+
 /* year */
 document.getElementById('y').textContent=new Date().getFullYear();
+
 /* reduced motion safeguard */
-if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ document.documentElement.classList.add('no-motion'); }
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  document.documentElement.classList.add('no-motion');
+}
 </script>
 </body>
 </html>
