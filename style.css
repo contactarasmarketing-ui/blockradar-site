@@ -177,4 +177,37 @@ section{padding:42px 0}
   width:100%; padding:14px 16px; border-radius:12px; border:1px solid rgba(255,255,255,.12);
   background:rgba(255,255,255,.04); color:var(--ink); font:inherit; outline:none
 }
-.lead input:focus,.lead textarea:focus{border-color:rgba(84,166,255,
+.lead input:focus,.lead textarea:focus{border-color:rgba(84,166,255,.45); box-shadow:0 0 0 3px rgba(84,166,255,.15)}
+
+.form-status{ margin-top:12px; font-size:14px; color:var(--muted); }
+.form-status.success{ color:#9CFFCF; }
+.form-status.error{ color:#ffb3c0; }
+
+#leadSubmit.is-loading{ pointer-events:none; opacity:.85; }
+#leadSubmit.is-loading::after{
+  content:""; width:1em; height:1em; margin-left:10px; border-radius:50%;
+  border:2px solid rgba(255,255,255,.6); border-top-color:transparent;
+  display:inline-block; animation:spin .8s linear infinite;
+}
+@keyframes spin{to{transform:rotate(1turn)}}
+
+.hp{ position:absolute !important; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden; }
+
+.site-footer{padding:32px 24px 44px; color:var(--muted); text-align:center; font-size:14px; border-top:1px solid rgba(255,255,255,.10)}
+
+/* Erişilebilirlik */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+@media(max-width:980px){
+  .site-header{height:84px; padding:0 18px}
+  body{padding-top:88px}
+  .brand{gap:14px}
+  .logo{width:72px}
+  .wordmark{font-size:32px}
+  .hero{grid-template-columns:1fr}
+  .title{font-size:42px}
+  .lead .row{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  body::after,.path,.beam,.p,.rGlow,.alertBeam,.alertPing,.logo-scan,.logo-ring{animation:none}
+}
