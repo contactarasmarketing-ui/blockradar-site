@@ -95,3 +95,69 @@ function startRadar() {
   }
   draw();
 }
+
+/* --------------------------
+   Redirect’siz Form Gönderim
+---------------------------*/
+const leadForm = document.getElementById('leadForm');
+const formStatus = document.getElementById('formStatus');
+const leadBtn = document.getElementById('leadSubmit');
+
+if (leadForm) {
+  leadForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // basit doğrulama
+    const email = leadForm.querySelector('#email');
+    if (email && !email.value.trim()) {
+      showStatus('Lütfen e-posta adresini yaz.', 'error');
+      email.focus();
+      return;
+    }
+
+    // loading durumu
+    if (leadBtn) {
+      leadBtn.classList.add('is-loading');
+      leadBtn.setAttribute('aria-busy', 'true');
+      leadBtn.disabled = true;
+    }
+
+    try {
+      const data = new FormData(leadForm);
+      const res = await fetch(leadForm.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        leadForm.reset();
+        showStatus('Teşekkürler! Mesajın alındı, en kısa sürede dönüş yapacağız. ✅', 'success');
+      } else {
+        let err = '';
+        try {
+          const j = await res.json();
+          err = j.errors?.map(e => e.message).join(' • ') || '';
+        } catch(_) {}
+        showStatus('Gönderim başarısız. Lütfen tekrar dene veya info@blockradar.app adresine yaz. ' + err, 'error');
+      }
+    } catch (e2) {
+      showStatus('Bir şeyler ters gitti. İnternet bağlantını kontrol edip tekrar dene.', 'error');
+    } finally {
+      if (leadBtn) {
+        leadBtn.classList.remove('is-loading');
+        leadBtn.removeAttribute('aria-busy');
+        leadBtn.disabled = false;
+      }
+    }
+  });
+}
+
+function showStatus(msg, type='info'){
+  if (!formStatus) return;
+  formStatus.textContent = msg;
+  formStatus.classList.remove('success','error');
+  if (type === 'success') formStatus.classList.add('success');
+  if (type === 'error') formStatus.classList.add('error');
+  formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
