@@ -71,7 +71,7 @@
         <div class="ribbon"><span class="dot" aria-hidden="true"></span><strong>Canlı İzleme</strong> • TR / EU / US Probe</div>
         <h1 id="hero-title" class="title">Engelleri Radar Gibi Yakala</h1>
         <p class="subtitle">Domain engellerini <b>çoklu lokasyonda</b> izler, <b>bölgesel olarak doğrular</b> ve <b>anında alarm</b> verir.</p>
-        <a class="cta hero-cta" href="mailto:info@blockradar.app?subject=BlockRadar%20Teklif%20Talebi" role="button">Teklif Al</a>
+        <a class="cta hero-cta" href="mailto:info@blockradar.app?subject=Blockradar%20Teklif%20Talebi" role="button">Teklif Al</a>
 
         <div class="stats" aria-live="polite">
           <div class="stat"><b id="c1">480</b><span>Anlık Kontrol / dk</span></div>
@@ -125,16 +125,26 @@
     <section aria-labelledby="contact-title">
       <div class="kicker">İLETİŞİM</div>
       <h2 id="contact-title">Bir demo veya teklif iste</h2>
-      <form action="https://formspree.io/f/xandgqrd" method="POST" class="lead">
+
+      <!-- Redirect’siz submit: JS varsa fetch; JS yoksa normal action -->
+      <form id="leadForm" action="https://formspree.io/f/xandgqrd" method="POST" class="lead" novalidate>
+        <!-- Honeypot -->
+        <input type="text" name="_gotcha" class="hp" autocomplete="off" tabindex="-1" aria-hidden="true">
+        <!-- Opsiyonel subject -->
+        <input type="hidden" name="_subject" value="BlockRadar İletişim Formu">
+
         <div class="row">
           <label class="sr-only" for="name">Ad Soyad</label>
           <input id="name" name="name" placeholder="Ad Soyad" required>
           <label class="sr-only" for="email">E-posta</label>
           <input id="email" type="email" name="email" placeholder="E-posta" required>
         </div>
+
         <label class="sr-only" for="message">İhtiyaç</label>
         <textarea id="message" name="message" rows="4" placeholder="İhtiyacını kısaca anlat"></textarea>
-        <button class="cta" type="submit">Gönder</button>
+
+        <button id="leadSubmit" class="cta" type="submit">Gönder</button>
+        <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
       </form>
     </section>
   </main>
