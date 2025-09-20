@@ -353,3 +353,36 @@ section{padding:42px 0}
 .site-header .wordmark {
   transition: opacity .3s ease, transform .3s ease;
 }
+
+/* === Mobile header & hero fixes === */
+
+/* iOS çentik için güvenli boşluk */
+:root { --safe-top: env(safe-area-inset-top, 0px); }
+
+/* Header içindeki elemanların taşmaması */
+.site-header .brand{ gap:14px; min-width:0; flex:1; }
+.site-header .cta{ flex:0 0 auto; }
+
+/* Çok dar ekranlarda wordmark’ı kırp */
+.wordmark{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+/* 600px ve altı: boyutları küçült, güvenli üst boşluk ver */
+@media (max-width:600px){
+  .site-header{
+    height:72px;
+    padding: calc(6px + var(--safe-top)) 12px 0 12px; /* üstte safe-area */
+  }
+  .logo{ width:56px; }
+  .wordmark{ font-size:28px; max-width:60vw; } /* yazı CTA’ya çarpmasın */
+  .cta{ padding:10px 16px; border-radius:12px; }
+
+  /* hero başlığı header’a yapışmasın */
+  body{ padding-top: calc(72px + var(--safe-top)); }
+  .hero{ margin-top: 6px; }
+  .wrap{ padding: 0 16px; }
+}
+
+/* 360px ve altı: sadece logo kalsın (istiyorsan) */
+@media (max-width:360px){
+  .wordmark{ display:none; }
+}
