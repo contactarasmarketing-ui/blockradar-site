@@ -1,9 +1,9 @@
  (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
 diff --git a/index.html b/index.html
-index a393cc727b24260aada6c5c11f1f2e3ef23c930d..6b5d3e7f4397c5e90718308aa5721dd0e27849bc 100644
+index a393cc727b24260aada6c5c11f1f2e3ef23c930d..7ac5b6fcd2c2ff2e08853af195e8486d0a14604c 100644
 --- a/index.html
 +++ b/index.html
-@@ -1,117 +1,117 @@
+@@ -1,117 +1,89 @@
 -<!doctype html>
 +<!DOCTYPE html>
  <html lang="tr">
@@ -43,35 +43,36 @@ index a393cc727b24260aada6c5c11f1f2e3ef23c930d..6b5d3e7f4397c5e90718308aa5721dd0
 -  <header class="site-header" role="banner">
 +  <header class="site-header">
      <a class="brand" href="#" aria-label="BlockRadar ana sayfa">
-       <!-- Logo -->
-       <svg class="logo" viewBox="0 0 64 64" aria-label="BlockRadar Logosu" role="img">
-         <defs>
-           <linearGradient id="br-g" x1="0" y1="0" x2="1" y2="1">
-             <stop offset="0" stop-color="#7BB6FF"/><stop offset="1" stop-color="#9B7BFF"/>
-           </linearGradient>
-           <linearGradient id="br-sweep" x1="0" y1="0" x2="1" y2="1">
-             <stop offset="0" stop-color="rgba(255,255,255,.22)"/>
-             <stop offset="1" stop-color="rgba(255,255,255,0)"/>
-           </linearGradient>
-         </defs>
-         <!-- Kalkan -->
-         <path d="M32 6c.6 0 1.2.14 1.8.42l16.7 7.9c1.1.53 1.8 1.66 1.8 2.87v17.9c0 6.9-4 13.2-10.3 16.1l-8.4 3.9c-1 .47-2.2.47-3.2 0l-8.4-3.9C15.6 48.3 11.6 42 11.6 35.1V17.2c0-1.21.7-2.34 1.8-2.87l16.7-7.9c.6-.28 1.2-.42 1.9-.42Z" fill="#142C4E"/>
-         <!-- Halkalar -->
-         <circle class="logo-ring" cx="32" cy="32" r="18"/>
-         <circle class="logo-ring r2" cx="32" cy="32" r="11.5"/>
-         <circle cx="32" cy="32" r="3.2" fill="#F1F2F6"/>
-         <!-- Yay -->
-         <path d="M23 41a14 14 0 0 1 0-18" fill="none" stroke="url(#br-g)" stroke-width="4" stroke-linecap="round" opacity=".95"/>
-         <!-- Dönen tarama -->
-         <g class="logo-scan"><path d="M-8 32 A40 40 0 0 1 24 8 L32 32 Z" fill="url(#br-sweep)" opacity=".55"/></g>
-         <!-- Ünlem + üçgen -->
-         <g transform="translate(32,18)" class="logo-alert">
-           <path d="M2 0 L10 14 L-6 14 Z" fill="#FF3D5A"/>
-           <rect x="1" y="5" width="2.6" height="6" rx="1.3" fill="#fff"/>
-           <circle cx="2.3" cy="13" r="1.25" fill="#fff"/>
-         </g>
-       </svg>
-       <span class="wordmark"><b>Block</b>Radar</span>
+-      <!-- Logo -->
+-      <svg class="logo" viewBox="0 0 64 64" aria-label="BlockRadar Logosu" role="img">
+-        <defs>
+-          <linearGradient id="br-g" x1="0" y1="0" x2="1" y2="1">
+-            <stop offset="0" stop-color="#7BB6FF"/><stop offset="1" stop-color="#9B7BFF"/>
+-          </linearGradient>
+-          <linearGradient id="br-sweep" x1="0" y1="0" x2="1" y2="1">
+-            <stop offset="0" stop-color="rgba(255,255,255,.22)"/>
+-            <stop offset="1" stop-color="rgba(255,255,255,0)"/>
+-          </linearGradient>
+-        </defs>
+-        <!-- Kalkan -->
+-        <path d="M32 6c.6 0 1.2.14 1.8.42l16.7 7.9c1.1.53 1.8 1.66 1.8 2.87v17.9c0 6.9-4 13.2-10.3 16.1l-8.4 3.9c-1 .47-2.2.47-3.2 0l-8.4-3.9C15.6 48.3 11.6 42 11.6 35.1V17.2c0-1.21.7-2.34 1.8-2.87l16.7-7.9c.6-.28 1.2-.42 1.9-.42Z" fill="#142C4E"/>
+-        <!-- Halkalar -->
+-        <circle class="logo-ring" cx="32" cy="32" r="18"/>
+-        <circle class="logo-ring r2" cx="32" cy="32" r="11.5"/>
+-        <circle cx="32" cy="32" r="3.2" fill="#F1F2F6"/>
+-        <!-- Yay -->
+-        <path d="M23 41a14 14 0 0 1 0-18" fill="none" stroke="url(#br-g)" stroke-width="4" stroke-linecap="round" opacity=".95"/>
+-        <!-- Dönen tarama -->
+-        <g class="logo-scan"><path d="M-8 32 A40 40 0 0 1 24 8 L32 32 Z" fill="url(#br-sweep)" opacity=".55"/></g>
+-        <!-- Ünlem + üçgen -->
+-        <g transform="translate(32,18)" class="logo-alert">
+-          <path d="M2 0 L10 14 L-6 14 Z" fill="#FF3D5A"/>
+-          <rect x="1" y="5" width="2.6" height="6" rx="1.3" fill="#fff"/>
+-          <circle cx="2.3" cy="13" r="1.25" fill="#fff"/>
+-        </g>
+-      </svg>
+-      <span class="wordmark"><b>Block</b>Radar</span>
++      <img class="brand-logo" src="assets/logo.png" width="220" height="220" alt="BlockRadar logosu">
      </a>
  
 -    <a class="cta" href="mailto:info@blockradar.app?subject=BlockRadar%20Teklif%20Talebi" role="button">Teklif Al</a>
@@ -135,10 +136,10 @@ index a393cc727b24260aada6c5c11f1f2e3ef23c930d..6b5d3e7f4397c5e90718308aa5721dd0
      <section class="br-pricing" aria-labelledby="pricing-title">
        <h2 id="pricing-title">Paketler</h2>
 diff --git a/index.html b/index.html
-index a393cc727b24260aada6c5c11f1f2e3ef23c930d..6b5d3e7f4397c5e90718308aa5721dd0e27849bc 100644
+index a393cc727b24260aada6c5c11f1f2e3ef23c930d..7ac5b6fcd2c2ff2e08853af195e8486d0a14604c 100644
 --- a/index.html
 +++ b/index.html
-@@ -191,44 +191,44 @@
+@@ -191,44 +163,44 @@
          </article>
  
        </div>
