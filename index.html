@@ -112,6 +112,143 @@
       </div>
     </section>
 
+    <!-- =================== PAKETLER =================== -->
+<section class="br-pricing reveal" id="paketler">
+  <div class="kicker">Paketler</div>
+  <h2>BlockRadar Paketleri</h2>
+
+  <div class="br-grid">
+    <!-- STARTER -->
+    <article class="br-plan">
+      <div class="br-head">
+        <span class="br-badge br-badge--starter">Starter</span>
+        <div class="br-price">
+          <span class="br-price-now">$99</span>
+          <del class="br-price-old">$149</del>
+          <span class="br-off">%33 indirim</span>
+        </div>
+      </div>
+
+      <div class="br-setup">💰 Kurulum: <b>$49</b></div>
+
+      <ul class="br-list">
+        <li><b>1 Domain</b> • Block Bildirimleri</li>
+        <li>60 saniye kontrol periyodu</li>
+        <li>Aktiflik Bildirimi</li>
+        <li>Şikayet Taraması</li>
+        <li>Telegram Bildirimleri</li>
+        <li>AI Destekli Alarm Doğrulama</li>
+      </ul>
+
+      <div class="br-extra">➕ Ek domain: <b>+$35 / ay</b></div>
+      <a class="cta br-cta" href="mailto:info@blockradar.app?subject=BlockRadar%20Starter">Teklif Al</a>
+    </article>
+
+    <!-- PRO -->
+    <article class="br-plan br-plan--pro">
+      <div class="br-head">
+        <span class="br-badge br-badge--pro">Pro</span>
+        <div class="br-price">
+          <span class="br-price-now">$199</span>
+          <del class="br-price-old">$269</del>
+          <span class="br-off">%25 indirim</span>
+        </div>
+      </div>
+
+      <div class="br-setup">💰 Kurulum: <b>$79</b></div>
+
+      <ul class="br-list">
+        <li><b>3 Domain</b> • Block Bildirimleri</li>
+        <li>Gelişmiş Çoklu Kontrol</li>
+        <li>Aktiflik Bildirimi</li>
+        <li>Şikayet Taraması</li>
+        <li>Telegram Bildirimleri</li>
+        <li>AI Destekli Alarm Doğrulama</li>
+        <li>SSL Sertifika Kontrolü</li>
+      </ul>
+
+      <div class="br-extra">➕ Ek domain: <b>+$35 / ay</b></div>
+      <a class="cta br-cta" href="mailto:info@blockradar.app?subject=BlockRadar%20Pro">Teklif Al</a>
+    </article>
+
+    <!-- ENTERPRISE -->
+    <article class="br-plan">
+      <div class="br-head">
+        <span class="br-badge br-badge--ent">Enterprise</span>
+        <div class="br-price">
+          <span class="br-price-now">$299</span>
+          <del class="br-price-old">$399</del>
+          <span class="br-off">%25 indirim</span>
+        </div>
+      </div>
+
+      <div class="br-setup">💰 Kurulum: <b>$99</b></div>
+
+      <ul class="br-list">
+        <li><b>6 Domain</b> • Block Bildirimleri</li>
+        <li>Paralel Çoklu Doğrulama</li>
+        <li>Aktiflik Bildirimi</li>
+        <li>Şikayet Taraması</li>
+        <li>Telegram + Slack Entegrasyonu</li>
+        <li>AI Destekli Alarm Doğrulama</li>
+        <li>7/24 Premium Destek</li>
+      </ul>
+
+      <div class="br-extra">➕ Ek domain: <b>+$35 / ay</b></div>
+      <a class="cta br-cta" href="mailto:info@blockradar.app?subject=BlockRadar%20Enterprise">Teklif Al</a>
+    </article>
+  </div>
+</section>
+
+<style>
+/* ---- Pricing (site temasıyla uyumlu) ---- */
+:root{
+  --br-card:#0e2441; --br-stroke:rgba(255,255,255,.10);
+  --br-ink:var(--ink, #F1F2F6); --br-muted:var(--muted, #C9CEDA);
+  --br-line:var(--line, #2a4266); --br-accent:var(--accent,#54a6ff);
+  --br-accent2:var(--accent2,#9b7bff);
+}
+.br-pricing h2{margin:8px 0 20px}
+.br-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.br-plan{
+  position:relative; display:flex; flex-direction:column; gap:14px;
+  background:linear-gradient(180deg,#112743,#0d1f39);
+  border:1px solid var(--br-stroke); border-radius:18px; padding:18px;
+  box-shadow:0 14px 34px rgba(0,0,0,.35);
+}
+.br-plan--pro{outline:2px solid #2e56a1; outline-offset:0; border-color:#2e56a1}
+.br-head{display:flex; align-items:center; justify-content:space-between}
+.br-badge{
+  font-weight:800; letter-spacing:.2px; padding:6px 10px; border-radius:999px;
+  border:1px solid var(--br-stroke); color:var(--br-muted); background:rgba(255,255,255,.05)
+}
+.br-badge--starter{border-color:#335a87}
+.br-badge--pro{border-color:#3e69c2; color:#dce6ff}
+.br-badge--ent{border-color:#6a59d1}
+
+.br-price{display:flex; align-items:baseline; gap:10px}
+.br-price-now{font-size:30px; font-weight:900}
+.br-price-old{color:var(--br-muted)}
+.br-off{
+  font-size:12px; padding:4px 8px; border-radius:999px; border:1px solid var(--br-stroke);
+  background:#132b4d; color:var(--br-muted)
+}
+.br-setup{color:var(--br-muted); font-size:14px; margin-top:-2px}
+.br-list{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px}
+.br-list li{background:rgba(255,255,255,.04); border:1px solid var(--br-stroke);
+  border-radius:12px; padding:10px 12px; color:var(--br-ink)}
+.br-extra{color:var(--br-muted); font-size:14px}
+
+.br-cta{margin-top:6px; text-align:center; width:100%}
+.br-cta{display:inline-flex; justify-content:center}
+
+/* Hover tatlılığı */
+.br-plan:hover{transform:translateY(-3px); transition:transform .18s ease, box-shadow .18s ease}
+.br-plan:hover{box-shadow:0 18px 44px rgba(0,0,0,.45)}
+/* Responsive başlık boşluğu */
+@media (max-width:980px){ .br-pricing h2{margin-bottom:14px} }
+</style>
+
     <!-- Güven blokları -->
     <section class="trust" aria-label="Güven metrikleri">
       <div class="grid cols-3">
