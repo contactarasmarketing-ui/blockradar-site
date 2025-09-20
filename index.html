@@ -1,189 +1,234 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
-diff --git a/index.html b/index.html
-index a393cc727b24260aada6c5c11f1f2e3ef23c930d..6b5d3e7f4397c5e90718308aa5721dd0e27849bc 100644
---- a/index.html
-+++ b/index.html
-@@ -1,117 +1,117 @@
--<!doctype html>
-+<!DOCTYPE html>
- <html lang="tr">
- <head>
--  <meta charset="utf-8"/>
--  <meta name="viewport" content="width=device-width,initial-scale=1"/>
--  <title>BlockRadar — Domain Engeli Takip & Anlık Alarm</title>
--  <link rel="canonical" href="https://blockradar.app/"/>
-+  <meta charset="utf-8">
-+  <meta name="viewport" content="width=device-width,initial-scale=1">
-+  <title>BlockRadar — Domain Engeli Takip &amp; Anlık Alarm</title>
-+  <link rel="canonical" href="https://blockradar.app/">
- 
-   <!-- SEO -->
-   <meta name="description" content="BlockRadar: Domain engellerini çoklu lokasyonda izler, bölgesel olarak doğrular ve anında alarm verir.">
-   <meta name="theme-color" content="#0B1D39">
- 
-   <!-- OG/Twitter -->
--  <meta property="og:title" content="BlockRadar — Domain Engeli Takip & Anlık Alarm">
-+  <meta property="og:title" content="BlockRadar — Domain Engeli Takip &amp; Anlık Alarm">
-   <meta property="og:description" content="Domain engellerini çoklu lokasyonda izler, bölgesel olarak doğrular ve anında alarm verir.">
-   <meta property="og:type" content="website">
-   <meta property="og:url" content="https://blockradar.app/">
-   <meta property="og:image" content="/og-image.png">
-   <meta name="twitter:card" content="summary_large_image">
- 
-   <!-- Icons -->
-   <link rel="icon" href="/favicon.png" sizes="32x32" type="image/png">
-   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
- 
--  <link rel="stylesheet" href="style.css"/>
-+  <link rel="stylesheet" href="style.css">
- </head>
- <body>
- 
-   <!-- SABİT HEADER -->
--  <header class="site-header" role="banner">
-+  <header class="site-header">
-     <a class="brand" href="#" aria-label="BlockRadar ana sayfa">
-       <!-- Logo -->
-       <svg class="logo" viewBox="0 0 64 64" aria-label="BlockRadar Logosu" role="img">
-         <defs>
-           <linearGradient id="br-g" x1="0" y1="0" x2="1" y2="1">
-             <stop offset="0" stop-color="#7BB6FF"/><stop offset="1" stop-color="#9B7BFF"/>
-           </linearGradient>
-           <linearGradient id="br-sweep" x1="0" y1="0" x2="1" y2="1">
-             <stop offset="0" stop-color="rgba(255,255,255,.22)"/>
-             <stop offset="1" stop-color="rgba(255,255,255,0)"/>
-           </linearGradient>
-         </defs>
-         <!-- Kalkan -->
-         <path d="M32 6c.6 0 1.2.14 1.8.42l16.7 7.9c1.1.53 1.8 1.66 1.8 2.87v17.9c0 6.9-4 13.2-10.3 16.1l-8.4 3.9c-1 .47-2.2.47-3.2 0l-8.4-3.9C15.6 48.3 11.6 42 11.6 35.1V17.2c0-1.21.7-2.34 1.8-2.87l16.7-7.9c.6-.28 1.2-.42 1.9-.42Z" fill="#142C4E"/>
-         <!-- Halkalar -->
-         <circle class="logo-ring" cx="32" cy="32" r="18"/>
-         <circle class="logo-ring r2" cx="32" cy="32" r="11.5"/>
-         <circle cx="32" cy="32" r="3.2" fill="#F1F2F6"/>
-         <!-- Yay -->
-         <path d="M23 41a14 14 0 0 1 0-18" fill="none" stroke="url(#br-g)" stroke-width="4" stroke-linecap="round" opacity=".95"/>
-         <!-- Dönen tarama -->
-         <g class="logo-scan"><path d="M-8 32 A40 40 0 0 1 24 8 L32 32 Z" fill="url(#br-sweep)" opacity=".55"/></g>
-         <!-- Ünlem + üçgen -->
-         <g transform="translate(32,18)" class="logo-alert">
-           <path d="M2 0 L10 14 L-6 14 Z" fill="#FF3D5A"/>
-           <rect x="1" y="5" width="2.6" height="6" rx="1.3" fill="#fff"/>
-           <circle cx="2.3" cy="13" r="1.25" fill="#fff"/>
-         </g>
-       </svg>
-       <span class="wordmark"><b>Block</b>Radar</span>
-     </a>
- 
--    <a class="cta" href="mailto:info@blockradar.app?subject=BlockRadar%20Teklif%20Talebi" role="button">Teklif Al</a>
-+    <a class="cta" href="mailto:info@blockradar.app?subject=BlockRadar%20Teklif%20Talebi">Teklif Al</a>
-   </header>
- 
-   <!-- ANA SARMALAYICI -->
--  <main class="wrap" role="main">
-+  <main class="wrap">
-     <!-- HERO -->
-     <section class="hero" aria-labelledby="hero-title">
-       <div>
-         <div class="ribbon"><span class="dot" aria-hidden="true"></span><strong>Canlı İzleme</strong> • TR / EU / US Probe</div>
-         <h1 id="hero-title" class="title">Engelleri Radar Gibi Yakala</h1>
-         <p class="subtitle">Domain engellerini <b>çoklu lokasyonda</b> izler, <b>bölgesel olarak doğrular</b> ve <b>anında alarm</b> verir.</p>
--        <a class="cta hero-cta" href="mailto:info@blockradar.app?subject=Blockradar%20Teklif%20Talebi" role="button">Teklif Al</a>
-+        <a class="cta hero-cta" href="mailto:info@blockradar.app?subject=Blockradar%20Teklif%20Talebi">Teklif Al</a>
- 
-         <div class="stats" aria-live="polite">
-           <div class="stat"><b id="c1">480</b><span>Anlık Kontrol / dk</span></div>
-           <div class="stat"><b id="c2">3</b><span>Lokasyon Probe</span></div>
-           <div class="stat"><b id="c3">320</b><span>Ortalama Alarm Süresi (ms)</span></div>
-         </div>
-       </div>
- 
-       <!-- Radar Kart -->
-       <div class="card" id="radarCard" aria-hidden="true">
-         <div class="radar" id="radar">
-           <div class="rGlow"></div>
-           <div class="rings"></div>
-           <div class="beam"></div>
-           <div class="alertBeam"></div>
-           <div class="p a"></div><div class="p b"></div><div class="p c"></div>
--          <div class="alertPing" id="ap1" style="top:34%;left:72%"></div>
--          <div class="alertPing" id="ap2" style="top:72%;left:50%"></div>
-+          <div class="alertPing" id="ap1"></div>
-+          <div class="alertPing" id="ap2"></div>
-         </div>
- 
-         <div class="wave">
-           <svg viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true">
-             <defs><linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
-               <stop offset="0" stop-color="#54a6ff"/><stop offset="1" stop-color="#9b7bff"/></linearGradient></defs>
-             <path class="path" id="wavePath" d="M0,70 C60,40 120,90 180,60 S300,80 360,50 480,90 540,60 600,70 600,70"/>
-           </svg>
-           <span class="badge">Uptime Telemetry</span>
-         </div>
-       </div>
-     </section>
- 
-     <!-- Özellikler -->
-     <section aria-label="Özellikler">
-       <div class="grid cols-3">
-         <div class="feature"><div class="icon" aria-hidden="true">⚡</div><h3>Anında Alarm</h3><p>403/451/5xx ve anahtar kelime bazlı engelleri ms içinde yakalar.</p></div>
-         <div class="feature"><div class="icon" aria-hidden="true">🌍</div><h3>Çoklu Lokasyon</h3><p>Bölgesel farkları kıyaslar, yanlış pozitifleri azaltır.</p></div>
-         <div class="feature"><div class="icon" aria-hidden="true">🛡️</div><h3>Kesintisiz</h3><p>systemd, logrotate ve recovery ile 7/24 operasyon.</p></div>
-       </div>
-     </section>
- 
-     <!-- FİYATLANDIRMA (Site temasına uyumlu) -->
-     <section class="br-pricing" aria-labelledby="pricing-title">
-       <h2 id="pricing-title">Paketler</h2>
-diff --git a/index.html b/index.html
-index a393cc727b24260aada6c5c11f1f2e3ef23c930d..6b5d3e7f4397c5e90718308aa5721dd0e27849bc 100644
---- a/index.html
-+++ b/index.html
-@@ -191,44 +191,44 @@
-         </article>
- 
-       </div>
-     </section>
- 
-     <!-- Güven blokları -->
-     <section class="trust" aria-label="Güven metrikleri">
-       <div class="grid cols-3">
-         <div class="stat"><b>99.95%</b><span>Hedeflenen Uptime</span></div>
-         <div class="stat"><b>≤ 500ms</b><span>Alarm Gecikmesi (P95)</span></div>
-         <div class="stat"><b>30 gün</b><span>Log Saklama</span></div>
-       </div>
-     </section>
- 
-     <!-- Form -->
-     <section aria-labelledby="contact-title">
-       <div class="kicker">İLETİŞİM</div>
-       <h2 id="contact-title">Bir demo veya teklif iste</h2>
- 
-       <form id="leadForm" action="https://formspree.io/f/xandgqrd" method="POST" class="lead" novalidate>
-         <input type="text" name="_gotcha" class="hp" autocomplete="off" tabindex="-1" aria-hidden="true">
-         <input type="hidden" name="_subject" value="BlockRadar İletişim Formu">
- 
-         <div class="row">
-           <label class="sr-only" for="name">Ad Soyad</label>
--          <input id="name" name="name" placeholder="Ad Soyad" required>
-+          <input id="name" name="name" type="text" placeholder="Ad Soyad" required>
-           <label class="sr-only" for="email">E-posta</label>
-           <input id="email" type="email" name="email" placeholder="E-posta" required>
-         </div>
- 
-         <label class="sr-only" for="message">İhtiyaç</label>
-         <textarea id="message" name="message" rows="4" placeholder="İhtiyacını kısaca anlat"></textarea>
- 
-         <button id="leadSubmit" class="cta" type="submit">Gönder</button>
-         <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
-       </form>
-     </section>
-   </main>
- 
-   <footer class="site-footer">© <span id="y"></span> BlockRadar • <a href="mailto:info@blockradar.app">info@blockradar.app</a></footer>
- 
-   <script src="main.js"></script>
- </body>
- </html>
- 
-EOF
-)
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>BlockRadar — Domain Engeli Takip & Anlık Alarm</title>
+  <link rel="canonical" href="https://blockradar.app/"/>
+
+  <!-- SEO -->
+  <meta name="description" content="BlockRadar: Domain engellerini çoklu lokasyonda izler, bölgesel olarak doğrular ve anında alarm verir.">
+  <meta name="theme-color" content="#0B1D39">
+
+  <!-- OG/Twitter -->
+  <meta property="og:title" content="BlockRadar — Domain Engeli Takip & Anlık Alarm">
+  <meta property="og:description" content="Domain engellerini çoklu lokasyonda izler, bölgesel olarak doğrular ve anında alarm verir.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://blockradar.app/">
+  <meta property="og:image" content="/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- SABİT HEADER -->
+  <header class="site-header" role="banner">
+    <a class="brand" href="#" aria-label="BlockRadar ana sayfa">
+      <!-- Logo -->
+      <svg class="logo" viewBox="0 0 64 64" aria-label="BlockRadar Logosu" role="img">
+        <defs>
+          <linearGradient id="br-g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#7BB6FF"/><stop offset="1" stop-color="#9B7BFF"/>
+          </linearGradient>
+          <linearGradient id="br-sweep" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="rgba(255,255,255,.22)"/>
+            <stop offset="1" stop-color="rgba(255,255,255,0)"/>
+          </linearGradient>
+        </defs>
+        <!-- Kalkan -->
+        <path d="M32 6c.6 0 1.2.14 1.8.42l16.7 7.9c1.1.53 1.8 1.66 1.8 2.87v17.9c0 6.9-4 13.2-10.3 16.1l-8.4 3.9c-1 .47-2.2.47-3.2 0l-8.4-3.9C15.6 48.3 11.6 42 11.6 35.1V17.2c0-1.21.7-2.34 1.8-2.87l16.7-7.9c.6-.28 1.2-.42 1.9-.42Z" fill="#142C4E"/>
+        <!-- Halkalar -->
+        <circle class="logo-ring" cx="32" cy="32" r="18"/>
+        <circle class="logo-ring r2" cx="32" cy="32" r="11.5"/>
+        <circle cx="32" cy="32" r="3.2" fill="#F1F2F6"/>
+        <!-- Yay -->
+        <path d="M23 41a14 14 0 0 1 0-18" fill="none" stroke="url(#br-g)" stroke-width="4" stroke-linecap="round" opacity=".95"/>
+        <!-- Dönen tarama -->
+        <g class="logo-scan"><path d="M-8 32 A40 40 0 0 1 24 8 L32 32 Z" fill="url(#br-sweep)" opacity=".55"/></g>
+        <!-- Ünlem + üçgen -->
+        <g transform="translate(32,18)" class="logo-alert">
+          <path d="M2 0 L10 14 L-6 14 Z" fill="#FF3D5A"/>
+          <rect x="1" y="5" width="2.6" height="6" rx="1.3" fill="#fff"/>
+          <circle cx="2.3" cy="13" r="1.25" fill="#fff"/>
+        </g>
+      </svg>
+      <span class="wordmark"><b>Block</b>Radar</span>
+    </a>
+
+    <a class="cta" href="mailto:info@blockradar.app?subject=BlockRadar%20Teklif%20Talebi" role="button">Teklif Al</a>
+  </header>
+
+  <!-- ANA SARMALAYICI -->
+  <main class="wrap" role="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <div class="ribbon"><span class="dot" aria-hidden="true"></span><strong>Canlı İzleme</strong> • TR / EU / US Probe</div>
+        <h1 id="hero-title" class="title">Engelleri Radar Gibi Yakala</h1>
+        <p class="subtitle">Domain engellerini <b>çoklu lokasyonda</b> izler, <b>bölgesel olarak doğrular</b> ve <b>anında alarm</b> verir.</p>
+        <a class="cta hero-cta" href="mailto:info@blockradar.app?subject=Blockradar%20Teklif%20Talebi" role="button">Teklif Al</a>
+
+        <div class="stats" aria-live="polite">
+          <div class="stat"><b id="c1">480</b><span>Anlık Kontrol / dk</span></div>
+          <div class="stat"><b id="c2">3</b><span>Lokasyon Probe</span></div>
+          <div class="stat"><b id="c3">320</b><span>Ortalama Alarm Süresi (ms)</span></div>
+        </div>
+      </div>
+
+      <!-- Radar Kart -->
+      <div class="card" id="radarCard" aria-hidden="true">
+        <div class="radar" id="radar">
+          <div class="rGlow"></div>
+          <div class="rings"></div>
+          <div class="beam"></div>
+          <div class="alertBeam"></div>
+          <div class="p a"></div><div class="p b"></div><div class="p c"></div>
+          <div class="alertPing" id="ap1" style="top:34%;left:72%"></div>
+          <div class="alertPing" id="ap2" style="top:72%;left:50%"></div>
+        </div>
+
+        <div class="wave">
+          <svg viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true">
+            <defs><linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#54a6ff"/><stop offset="1" stop-color="#9b7bff"/></linearGradient></defs>
+            <path class="path" id="wavePath" d="M0,70 C60,40 120,90 180,60 S300,80 360,50 480,90 540,60 600,70 600,70"/>
+          </svg>
+          <span class="badge">Uptime Telemetry</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Özellikler -->
+    <section aria-label="Özellikler">
+      <div class="grid cols-3">
+        <div class="feature"><div class="icon" aria-hidden="true">⚡</div><h3>Anında Alarm</h3><p>403/451/5xx ve anahtar kelime bazlı engelleri ms içinde yakalar.</p></div>
+        <div class="feature"><div class="icon" aria-hidden="true">🌍</div><h3>Çoklu Lokasyon</h3><p>Bölgesel farkları kıyaslar, yanlış pozitifleri azaltır.</p></div>
+        <div class="feature"><div class="icon" aria-hidden="true">🛡️</div><h3>Kesintisiz</h3><p>systemd, logrotate ve recovery ile 7/24 operasyon.</p></div>
+      </div>
+    </section>
+
+    <!-- FİYATLANDIRMA (Site temasına uyumlu) -->
+    <section class="br-pricing" aria-labelledby="pricing-title">
+      <h2 id="pricing-title">Paketler</h2>
+      <div class="br-grid">
+
+        <!-- Starter -->
+        <article class="br-plan" aria-label="Starter">
+          <div class="br-head">
+            <span class="br-badge br-badge--starter">Starter</span>
+            <span class="br-off">%33 indirim</span>
+          </div>
+          <div class="br-price">
+            <div class="br-price-now">$99 <small>/ ay</small></div>
+            <div class="br-price-old"><s>$149</s></div>
+          </div>
+          <div class="br-setup">Kurulum: $49</div>
+          <ul class="br-list">
+            <li><b>1 Domain</b> • Block Bildirimleri</li>
+            <li>60 saniye kontrol periyodu</li>
+            <li>Aktiflik Bildirimi</li>
+            <li>Telegram Bildirimleri</li>
+            <li>AI Destekli Alarm Doğrulama</li>
+          </ul>
+          <div class="br-extra">➕ Ek domain: +$35 / ay</div>
+          <a class="cta br-cta" href="mailto:info@blockradar.app?subject=Starter%20Paketi">Satın Al</a>
+        </article>
+
+        <!-- Pro -->
+        <article class="br-plan br-plan--pro" aria-label="Pro">
+          <div class="br-head">
+            <span class="br-badge br-badge--pro">Pro</span>
+            <span class="br-off">%25 indirim</span>
+          </div>
+          <div class="br-price">
+            <div class="br-price-now">$199 <small>/ ay</small></div>
+            <div class="br-price-old"><s>$269</s></div>
+          </div>
+          <div class="br-setup">Kurulum: $79</div>
+          <ul class="br-list">
+            <li><b>3 Domain</b> • Block Bildirimleri</li>
+            <li>Gelişmiş Çoklu Kontrol</li>
+            <li>Aktiflik Bildirimi</li>
+            <li>Şikayet Taraması</li>
+            <li>Telegram Bildirimleri</li>
+            <li>AI Destekli Alarm Doğrulama</li>
+            <li>SSL Sertifika Kontrolü</li>
+          </ul>
+          <div class="br-extra">➕ Ek domain: +$35 / ay</div>
+          <a class="cta br-cta" href="mailto:info@blockradar.app?subject=Pro%20Paketi">Satın Al</a>
+        </article>
+
+        <!-- Enterprise -->
+        <article class="br-plan" aria-label="Enterprise">
+          <div class="br-head">
+            <span class="br-badge br-badge--ent">Enterprise</span>
+            <span class="br-off">%25 indirim</span>
+          </div>
+          <div class="br-price">
+            <div class="br-price-now">$299 <small>/ ay</small></div>
+            <div class="br-price-old"><s>$399</s></div>
+          </div>
+          <div class="br-setup">Kurulum: $99</div>
+          <ul class="br-list">
+            <li><b>6 Domain</b> • Block Bildirimleri</li>
+            <li>Gelişmiş Çoklu Kontrol</li>          <!-- Pro’nun özelliği -->
+            <li>Aktiflik Bildirimi</li>               <!-- Pro’da var -->
+            <li>Şikayet Taraması</li>                 <!-- Pro’da var -->
+            <li>Telegram Bildirimleri</li>            <!-- Pro’da var -->
+            <li>AI Destekli Alarm Doğrulama</li>      <!-- Pro’da var -->
+            <li>SSL Sertifika Kontrolü</li>           <!-- Pro’da var -->
+            <li><b>Paralel Çoklu Doğrulama</b></li>   <!-- Enterprise’a özel ek -->
+            <li><b>Slack Entegrasyonu</b></li>        <!-- Enterprise’a özel ek -->
+            <li><b>7/24 Premium Destek</b></li>       <!-- Enterprise’a özel ek -->
+          </ul>
+          <div class="br-extra">➕ Ek domain: +$35 / ay</div>
+          <a class="cta br-cta" href="mailto:info@blockradar.app?subject=Enterprise%20Paketi">Satın Al</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Güven blokları -->
+    <section class="trust" aria-label="Güven metrikleri">
+      <div class="grid cols-3">
+        <div class="stat"><b>99.95%</b><span>Hedeflenen Uptime</span></div>
+        <div class="stat"><b>≤ 500ms</b><span>Alarm Gecikmesi (P95)</span></div>
+        <div class="stat"><b>30 gün</b><span>Log Saklama</span></div>
+      </div>
+    </section>
+
+    <!-- Form -->
+    <section aria-labelledby="contact-title">
+      <div class="kicker">İLETİŞİM</div>
+      <h2 id="contact-title">Bir demo veya teklif iste</h2>
+
+      <form id="leadForm" action="https://formspree.io/f/xandgqrd" method="POST" class="lead" novalidate>
+        <input type="text" name="_gotcha" class="hp" autocomplete="off" tabindex="-1" aria-hidden="true">
+        <input type="hidden" name="_subject" value="BlockRadar İletişim Formu">
+
+        <div class="row">
+          <label class="sr-only" for="name">Ad Soyad</label>
+          <input id="name" name="name" placeholder="Ad Soyad" required>
+          <label class="sr-only" for="email">E-posta</label>
+          <input id="email" type="email" name="email" placeholder="E-posta" required>
+        </div>
+
+        <label class="sr-only" for="message">İhtiyaç</label>
+        <textarea id="message" name="message" rows="4" placeholder="İhtiyacını kısaca anlat"></textarea>
+
+        <button id="leadSubmit" class="cta" type="submit">Gönder</button>
+        <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">© <span id="y"></span> BlockRadar • <a href="mailto:info@blockradar.app">info@blockradar.app</a></footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
