@@ -343,3 +343,13 @@ section{padding:42px 0}
   gap: 12px;
   text-decoration: none;
 }
+
+/* Scroll davranışı */
+.site-header.shrink .wordmark {
+  opacity: 0;
+  transform: translateX(-20px);
+  pointer-events: none;
+}
+.site-header .wordmark {
+  transition: opacity .3s ease, transform .3s ease;
+}
