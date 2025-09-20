@@ -2,6 +2,26 @@
 const yEl = document.getElementById('y');
 if (yEl) yEl.textContent = new Date().getFullYear();
 
+// Mobil scroll'da header'ı gizle/göster (desktop etkilenmez)
+(function mobileHeaderAutoHide(){
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  const mq = window.matchMedia('(max-width: 768px)');
+  let hidden = false;
+
+  function apply(){
+    const shouldHide = mq.matches && window.scrollY > 40; // 40px sonra gizle
+    if (shouldHide !== hidden){
+      header.classList.toggle('mobile-hide', shouldHide);
+      hidden = shouldHide;
+    }
+  }
+  window.addEventListener('scroll', apply, { passive:true });
+  window.addEventListener('resize', apply);
+  apply();
+})();
+
 // Canlı sayaçlar (random walk + easing)
 const el1 = document.getElementById('c1');
 const el2 = document.getElementById('c2');
