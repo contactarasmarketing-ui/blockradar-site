@@ -318,3 +318,28 @@ section{padding:42px 0}
   justify-content: center;
   width: 100%;
 }
+
+.logo {
+  width: 64px;
+  height: auto;
+  display: block;
+}
+.wordmark {
+  font-size: 32px;
+  font-weight: 900;
+  margin-left: 12px;
+  background: linear-gradient(90deg,#EAF0FF,#C9D8FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.wordmark b {
+  background: linear-gradient(90deg,#7BB6FF,#9B7BFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
