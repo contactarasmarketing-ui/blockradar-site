@@ -161,3 +161,13 @@ function showStatus(msg, type='info'){
   if (type === 'error') formStatus.classList.add('error');
   formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
+
+// Scroll olunca header yazısını küçült
+const header = document.querySelector('.site-header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    header.classList.add('shrink');
+  } else {
+    header.classList.remove('shrink');
+  }
+});
