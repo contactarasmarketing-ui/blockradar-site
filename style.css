@@ -386,3 +386,10 @@ section{padding:42px 0}
 @media (max-width:360px){
   .wordmark{ display:none; }
 }
+
+/* Mobilde logo + yazı gizle */
+@media (max-width:600px){
+  .site-header .brand{
+    display: none;
+  }
+}
