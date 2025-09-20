@@ -387,9 +387,13 @@ section{padding:42px 0}
   .wordmark{ display:none; }
 }
 
-/* Mobilde logo + yazı gizle */
-@media (max-width:600px){
-  .site-header .brand{
-    display: none;
+/* --- Mobilde scroll ile header'ı gizle --- */
+@media (max-width: 768px) {
+  .site-header{
+    transition: transform .25s ease;
+    will-change: transform;
+  }
+  .site-header.mobile-hide{
+    transform: translateY(-120%);
   }
 }
